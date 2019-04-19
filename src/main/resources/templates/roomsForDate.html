@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dates</title>
+    <title>Rooms</title>
 </head>
 <body>
     <ul>
-        <li th:each="date: ${dates}"><a href="{/dates/{date.id}}" th:text="${date.stringDate}"></a>
+        <li th:each="unreservedRoom: ${date.unreservedRooms}" th:text="${unreservedRoom.roomNumber}">
         </li>
     </ul>
 </body>

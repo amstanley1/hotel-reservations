@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -28,6 +29,16 @@ public class RoomsController {
 		model.addAttribute("dates", dateRepo.findAll());
 		return "dates";
 	}
+	
+	@RequestMapping("/dates/{dateId}")
+	public String findAllDates(Model model, @PathVariable("dateId") long dateId) {
+		model.addAttribute("date", dateRepo.findById(dateId));
+		return "roomsForDate";
+	}
+	
+	
+	
+	
 	
 	
 

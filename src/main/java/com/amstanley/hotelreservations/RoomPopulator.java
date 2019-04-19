@@ -16,6 +16,8 @@ public class RoomPopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		
 		Room one = new Room("101", 4, 2, 1, true, true);
 		Room two = new Room("102", 4, 2, 1, true, true);
 		Room three = new Room("103", 4, 2, 1, false, true);
