@@ -8,7 +8,7 @@
 </head>
 <body>
     <ul>
-        <li th:each="date: ${dates}"><a href="{/dates/{date.id}}" th:text="${date.stringDate}"></a>
+        <li th:each="date: ${dates}"><a th:href="@{/dates/} + ${date.id}" th:text="${date.stringDate}"></a>
         </li>
     </ul>
 </body>

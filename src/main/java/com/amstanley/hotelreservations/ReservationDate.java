@@ -42,6 +42,10 @@ public class ReservationDate {
 		this.reservedRooms.add(room);
 	}
 	
+	public long getId() {
+		return this.id;
+	}
+	
 	public String getStringDate() {
 		if (date.getDayOfMonth() < 10) {
 			return this.date.format(DateTimeFormatter.ofPattern("MMMM d, yyyy"));
