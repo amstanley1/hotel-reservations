@@ -32,7 +32,7 @@ public class RoomsController {
 	
 	@RequestMapping("/dates/{dateId}")
 	public String findAllDates(Model model, @PathVariable("dateId") long dateId) {
-		model.addAttribute("date", dateRepo.findById(dateId));
+		model.addAttribute("date", dateRepo.findById(dateId).get());
 		return "roomsForDate";
 	}
 	
