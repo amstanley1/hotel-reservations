@@ -32,7 +32,20 @@ public class RoomsController {
 	
 	@RequestMapping("/dates/{dateId}")
 	public String findAllDates(Model model, @PathVariable("dateId") long dateId) {
-		model.addAttribute("date", dateRepo.findById(dateId).get());
+		ReservationDate date = dateRepo.findById(dateId).get();
+		int doubleBeds = 0;
+		int queenBeds = 0;
+		model.addAttribute("date", date);
+		for (Room unreservedRoom : date.getUnreservedRooms()) {
+			if (unreservedRoom.getBedsType() == 1) {
+				doubleBeds++;
+			}
+			else if (unreservedRoom.getBedsType() == 2) {
+				queenBeds++;
+			}
+		}
+		model.addAttribute("doubleBeds", doubleBeds);
+		model.addAttribute("queenBeds", queenBeds);
 		return "roomsForDate";
 	}
 	

@@ -8,7 +8,11 @@
 </head>
 <body>
     <ul>
-        <li th:each="unreservedRoom: ${date.unreservedRooms}" th:text="${unreservedRoom.roomNumber}">
+        <!--<li th:each="unreservedRoom: ${date.unreservedRooms}" th:text="${unreservedRoom.roomNumber}">
+        </li> -->
+        <li th:if=${doubleBeds} th:text="'1 Double Bed: ' + ${doubleBeds}">
+        </li>
+         <li th:if=${queenBeds} th:text="'Standard 2 Queen: ' + ${queenBeds}">
         </li>
     </ul>
 </body>

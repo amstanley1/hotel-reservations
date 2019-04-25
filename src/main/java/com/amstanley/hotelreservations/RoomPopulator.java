@@ -18,11 +18,11 @@ public class RoomPopulator implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		
-		Room one = new Room("101", 4, 2, 1, true, true);
-		Room two = new Room("102", 4, 2, 1, true, true);
-		Room three = new Room("103", 4, 2, 1, false, true);
-		Room four = new Room("104", 4, 2, 1, true, true);
-		Room five = new Room("105", 4, 2, 1, true, true);
+		Room one = new Room("101", 4, 2, 2, true, true);
+		Room two = new Room("102", 2, 1, 1, true, true);
+		Room three = new Room("103", 2, 1, 1, false, true);
+		Room four = new Room("104", 4, 2, 2, true, true);
+		Room five = new Room("105", 4, 2, 2, true, true);
 		one = roomRepo.save(one);
 		two = roomRepo.save(two);
 		three = roomRepo.save(three);
